@@ -17,12 +17,305 @@ $color-secondary-lightgray: hsl(0, 0%, 98%);
 
 body {
   font-family: 'Karla', sans-serif;
-  /* font-family: 'DM Serif Display', serif; */
   font-size: 16px;
 }
 
 .wrapper {
   min-height: 100vh;
+  height: auto;
+  background-color: #fff;
+  padding-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  height: 80px;
+  padding: 0 3rem;
+  margin-left: 3vw;
+
+  .logo {
+  }
+
+  &__inner-container {
+    a {
+      color: $color-secondary-grayviolet;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      letter-spacing: 1px;
+      transition: all 0.2s ease-in;
+
+      &:not(last-child):hover {
+        color: $color-secondary-darkviolet;
+      }
+
+      &:last-child:hover {
+        color: #fff;
+      }
+    }
+
+    &--btn {
+      border: 2px solid $color-secondary-darkviolet;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: $color-secondary-darkviolet;
+      }
+    }
+  }
+  &__menuBtn {
+    display: none;
+  }
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.hero-section {
+  background-color: $color-primary-darkviolet;
+  height: 65vh;
+  position: relative;
+  overflow: hidden;
+
+  .hero-content {
+    width: 40%;
+    margin: 5vh 0 0 20vh;
+
+    &__heading {
+      color: #fff;
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      margin-bottom: 4vh;
+    }
+
+    &__text {
+      color: $color-secondary-lightgray;
+      line-height: 2rem;
+      width: 80%;
+      margin-bottom: 5vh;
+    }
+
+    &__btn {
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      border: 2px solid white;
+      letter-spacing: 1px;
+      padding: 1rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $color-primary-darkviolet;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__img-right {
+    position: absolute;
+    top: -5rem;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.bg-img {
+  position: relative;
+
+  &__family-photo {
+    position: absolute;
+    right: 11rem;
+    top: -33rem;
+  }
+
+  &__img-left {
+    position: absolute;
+    left: 0;
+    top: -10rem;
+  }
+}
+
+.middle-section {
+  height: 110vh;
+  margin: 10vh 0 0 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 10vh;
+
+  .bg-pattern-right-mobile {
+    display: none;
+  }
+
+  &__heading {
+    align-self: flex-start;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: 4rem;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    .process-card,
+    .prices-card,
+    .people-card {
+      img {
+        margin-bottom: 1.5rem;
+      }
+
+      &__heading {
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-size: 2rem;
+      }
+
+      &__text {
+        width: 75%;
+        color: $color-secondary-grayviolet;
+        line-height: 1.8rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .about-section {
+    width: 85vw;
+    height: 25vh;
+    background-color: $color-primary-darkviolet;
+    background-image: url('/img/bg-pattern-how-we-work-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+
+    &__heading {
+      color: #fff;
+      width: 40%;
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 4rem;
+    }
+
+    &__btn {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 1rem 1.5rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $color-primary-darkviolet;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+footer {
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-image: url('/img/bg-pattern-footer-desktop.svg');
+  background-repeat: no-repeat;
+  background-color: $color-secondary-lightgray;
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+    margin: 0 10vh 0 20vh;
+
+    .socials {
+      width: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .facebook-icon {
+        mask: url('/img/icon-facebook.svg');
+      }
+      .twitter-icon {
+        mask: url('/img/icon-twitter.svg');
+      }
+      .pinterest-icon {
+        mask: url('/img/icon-pinterest.svg');
+      }
+      .instagram-icon {
+        mask: url('/img/icon-instagram.svg');
+      }
+
+      .facebook-icon,
+      .twitter-icon,
+      .pinterest-icon,
+      .instagram-icon {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        background-color: $color-secondary-grayviolet;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+          background-color: $color-primary-darkviolet;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    margin: 0 5vw 0 10vw;
+    justify-content: space-between;
+    text-transform: uppercase;
+
+    .company-info,
+    .help-info,
+    .contact-info,
+    .other-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      &__heading {
+        color: gray;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+      }
+
+      a {
+        color: $color-primary-darkviolet;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        font-weight: 700;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 .attribution {
