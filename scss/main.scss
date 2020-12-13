@@ -38,9 +38,6 @@ body {
   padding: 0 3rem;
   margin-left: 3vw;
 
-  .logo {
-  }
-
   &__inner-container {
     a {
       color: $color-secondary-grayviolet;
@@ -81,6 +78,7 @@ body {
 .hero-section {
   background-color: $color-primary-darkviolet;
   height: 65vh;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
 
@@ -146,7 +144,7 @@ body {
 
 .middle-section {
   height: 110vh;
-  margin: 10vh 0 0 10vh;
+  margin: 15vh 0 0 10vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -323,5 +321,315 @@ footer {
   text-align: center;
   a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .bg-img {
+    &__family-photo {
+      background-image: url('/img/image-intro-mobile.jpg');
+      right: 10em;
+      top: -20rem;
+      height: 500px;
+    }
+  }
+
+  .middle-section {
+    .about-section {
+      height: auto;
+    }
+  }
+
+  footer {
+    .footer-top {
+      margin: 0 10vh 0 17vh;
+
+      .socials {
+        width: 15%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .hero-section {
+    .hero-content {
+      margin-left: 3rem;
+
+      &__btn {
+        margin-left: 5rem;
+      }
+    }
+  }
+
+  .bg-img {
+    &__family-photo {
+      background-image: url('/img/image-intro-mobile.jpg');
+      right: 0;
+      top: -35rem;
+    }
+  }
+
+  .middle-section {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    &__heading {
+      margin-left: 6rem;
+      font-size: 5rem;
+    }
+
+    .cards-container {
+      margin-left: 6rem;
+
+      .process-card,
+      .prices-card,
+      .people-card {
+        &__heading {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .about-section {
+      height: auto;
+      margin: 0;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      &__heading {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  footer {
+    .footer-top {
+      margin: 0 5vh 0 8vh;
+
+      .socials {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .wrapper {
+    min-width: 375px;
+  }
+
+  .nav {
+    &__inner-container {
+      display: none;
+    }
+
+    &__menuBtn {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .nav-mobile {
+    position: absolute;
+    margin-top: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: $color-secondary-darkviolet;
+    background-image: url('/img/bg-pattern-mobile-nav.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10vh;
+    opacity: 0;
+    z-index: 5;
+    transition: all 0.3s ease-in-out;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 2rem 0;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    &__btn {
+      border: 2px solid #fff;
+      padding: 1rem 2rem;
+
+      &:hover {
+        background-color: #fff;
+        color: $color-primary-darkviolet;
+      }
+    }
+  }
+
+  .nav-mobile.show {
+    opacity: 1;
+  }
+
+  .hero-section__img-right,
+  .bg-img__family-photo,
+  .bg-img__img-left {
+    display: none;
+  }
+
+  .bg-family-mobile {
+    display: block;
+    margin-top: 0;
+    background-image: url('/img/image-intro-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 40%;
+    height: 300px;
+  }
+
+  .hero-section {
+    background-image: url('/img/bg-pattern-intro-left-mobile.svg');
+    background-repeat: no-repeat;
+    padding: 1rem 0;
+    height: 400px;
+    width: 100%;
+    position: relative;
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      margin: 3rem 0 0 0;
+
+      &__heading {
+        text-align: center;
+
+        line-height: 1;
+        font-size: 3.5rem;
+      }
+
+      &__text {
+        text-align: center;
+      }
+
+      &__btn {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .middle-section {
+    position: relative;
+    height: auto;
+    margin: 6rem 0;
+    padding: 0;
+
+    .bg-pattern-right-mobile {
+      display: block;
+      position: absolute;
+      top: -12rem;
+      right: 0;
+    }
+
+    &__heading {
+      text-align: center;
+      font-size: 3rem;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0;
+      margin-bottom: 5rem;
+
+      .process-card,
+      .prices-card,
+      .people-card {
+        text-align: center;
+
+        &__heading {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        &__text {
+          font-size: 1.2rem;
+          width: 100%;
+          margin-bottom: 2rem;
+          padding: 0 1.5rem;
+        }
+      }
+    }
+
+    .about-section {
+      height: auto;
+      width: 80%;
+      flex-direction: column;
+      padding: 5rem 0;
+      background-image: url('/img/bg-pattern-how-we-work-mobile.svg');
+      background-position: top right;
+
+      &__heading {
+        font-size: 2.5rem;
+        width: 90%;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  footer {
+    background-image: url('/img/bg-pattern-footer-mobile.svg');
+    background-size: contain;
+    height: auto;
+
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding-top: 4rem;
+      margin-bottom: 3rem;
+
+      .logo {
+        margin-bottom: 2rem;
+      }
+
+      .socials {
+        width: 50%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+
+    .company-info,
+    .help-info,
+    .contact-info,
+    .other-info {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      h6 {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
