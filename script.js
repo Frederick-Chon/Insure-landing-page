@@ -1,8 +1,8 @@
 const navMobile = document.querySelector('.nav-mobile');
 const navBtn = document.querySelector('.nav-button');
 
-const hamburger = '/img/icon-hamburger.svg';
-const close = '/img/icon-close.svg';
+const hamburger = './img/icon-hamburger.svg';
+const close = './img/icon-close.svg';
 let toggleBtn = document.getElementById('navBtn');
 let state = false;
 
